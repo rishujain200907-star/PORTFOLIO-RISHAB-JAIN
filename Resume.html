@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishab Jain - Resume</title>
+  <!-- Font Awesome CDN for logos and arrows -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #d8dcdb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Frame outer container */
+    .page-frame {
+      background-color: #e3e3e3;
+      padding: 20px;
+      border: 1px solid #c8c8c8;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .portfolio-container {
+      background-color: #1470af;
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      position: relative;
+    }
+
+    /* --- GLOBAL HEADER SECTION (UNCHANGED) --- */
+    .top-section {
+      padding: 30px 40px 20px 40px;
+    }
+
+    /* Row 1: Name (Left) & Social Icons (Right) */
+    .header-main-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icon {
+      color: #ffffff;
+      font-size: 1rem;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background-color: #ffffff;
+      color: #4572c2;
+      transform: translateY(-2px);
+    }
+
+    /* Row 2: Navigation Bar */
+    .nav-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 30px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+      background-color: #ffffff;
+      color: #4572c2;
+      transform: translateY(-2px);
+    }
+
+    /* --- RESUME MAIN LAYOUT --- */
+    .resume-container {
+      display: flex;
+      padding: 40px;
+      gap: 40px;
+      min-height: 420px;
+    }
+
+    /* Left Side Title */
+    .resume-left {
+      width: 40%;
+    }
+
+    .resume-title {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    /* Right Side Accordions */
+    .resume-right {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .accordion-item:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 22px 0;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 2.2rem;
+      font-weight: 600;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      opacity: 0.85;
+    }
+
+    .accordion-header i {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-header i {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, padding 0.35s ease-out;
+      color: #f0f4f8;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .accordion-item.active .accordion-content {
+      padding-bottom: 22px;
+    }
+
+    .accordion-content p {
+      margin-bottom: 10px;
+    }
+
+    .accordion-content ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .footer{
+      padding: 20px 40px;
+      background-color:#0a90c6;
+      border-top: 1px solid #140202;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .footer p{
+      font-size:1.05rem;
+      line-height:1.65;
+      color: #ffffff;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header-main-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .resume-container {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 20px;
+      }
+
+      .resume-left, .resume-right {
+        width: 100%;
+      }
+
+      .resume-title {
+        font-size: 2.8rem;
+      }
+
+      .accordion-header {
+        font-size: 1.6rem;
+      }
+
+  
+  }
+  </style>
+</head>
+<body>
+
+    <div class="portfolio-container" id="portfolio">
+      
+      <!-- Top Header Section (Line 1 & Line 2) -->
+      <header class="top-section">
+        
+        <!-- ROW 1: Name (Left) & Social Icons (Right) -->
+        <div class="header-main-bar">
+          <h1 class="brand-name">RISHAB JAIN</h1>
+          
+          <div class="social-links">
+            <a href="https://www.instagram.com/rishab_jain.786?igsh=MWFueXVmYWJycWYydw==" target="_blank" class="social-icon" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://github.com/rishujain200907-star/" target="_blank" class="social-icon" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:Rishabjain2909@gmail.com" class="social-icon" title="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rishab-jain-084b44428/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BUnie501wR%2Faz90i13UVVYg%3D%3D" target="_blank" class="social-icon" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ROW 2: Navigation Line Directly Beneath Row 1 -->
+        <nav class="nav-bar">
+           <a href="index.html" class="nav-btn">Home</a>
+          <a href="resume.html" class="nav-btn active">Resume</a>
+          <a href="projects.html" class="nav-btn">Projects</a>
+          <a href="research.html" class="nav-btn">Research papers</a>
+          <a href="contact.html" class="nav-btn">Contact</a>
+        </nav>
+
+      </header>
+
+      <!-- Main Resume Content Section -->
+      <main class="resume-container">
+        
+        <!-- Left Title -->
+        <div class="resume-left">
+          <h2 class="resume-title">My Resume</h2>
+        </div>
+
+        <!-- Right Collapsible Accordion Sections -->
+        <div class="resume-right">
+
+          <!-- NEW: Personal Details Section -->
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Personal Details
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p><strong>Name:</strong> Rishab Jain</p>
+              <p><strong>Age:</strong>19</p>
+              <p><strong>Sex:</strong>Male</p>
+              <p><strong>Martial Status:</strong> Single </p>
+              <p><strong>Location:</strong> Muzaffarnagar,uttar Pradesh-251002</p>
+              <p><strong>Languages:</strong> English, Hindi</p>
+              <p><strong>Hobbies & Interests:</strong> Writing, Music, Media Editing, Web Development</p>
+              <p><strong>Nationality:</strong> Indian</p>
+            </div>
+          </div>
+          
+          <!-- Education Section -->
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Education
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <h3><strong>Indian Institute Of Technology, Madras</strong> — class of 2030</h3>
+              <p><strong>Bachelor in Science (B.S.)</strong> in Data Science and Applications</p>
+              <p><strong>Status:</strong> Currently Pursuing (at Foundational Level)</p>
+              <p><Strong>Subjects:</Strong> <a href="Subject.html" style="color:#ffffff">Click here to view Subject</a></p>
+
+              <h3><strong>Sample-Example</strong>- class of 2031</h3>
+              <p><Strong>Bachelor in Technology (B.Tech.)</Strong> Sample-Course</p>
+              <p><strong>Status:</strong> Joining Soon!</p>
+              <p><strong>Subject:</strong> <a href="........." style="color:#ffffff">Sample Subjects</a></p>
+
+              <h3><strong>Central Board of Secondary Education</strong>Delhi</h3>
+              <p><strong>Senior Secondary (XII)</strong> -2026 </p>
+              <p><strong>CGPA:</strong> 8.74 (83%)</p>
+              <p><strong>Major Subjects:</strong> Physics, Chemistry, Mathematics</p>
+
+              <p><Strong>Secondary (X)</Strong> -2024 </p>
+              <p><strong>CGPA:</strong> 9.58 (91%)</p>
+
+              <h3><Strong>Joint Entrance Examination</Strong>-2027</h3>
+              <p><strong>Mains-Score:</strong> __%ile</p>
+              <p><strong>Mains-Rank</strong>___</p>
+              <p><strong>Advanced-Score:</strong> ___</p>
+              <p><strong>Advanced-Rank:</strong> ___</p>
+            </div>
+          </div>
+
+          <!-- Work Experience Section -->
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Work Experience
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <h3><strong>Peer Tutor</strong> – Science & Mathematics |(2025–2026)</h3>
+              <p>Mentored junior students in core Physics and Mathematics concepts, breaking down complex problem-solving methods</p>
+
+              <h3><strong>Freelancing</strong> - data management and Web development| (2024-25)</h3>
+              <p>Delivered Custom documents templates, web templates meeting specific styling requirement </p>
+            </div>
+          </div>
+
+          <!-- Leadership & Extracurriculars Section -->
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Leadership & Extracurriculars
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <h3><strong>Lead Student Research</strong>Senior Secondary (2025)</h3>
+              <p><Strong>Physics File Project</Strong>Conceptualized and crafted a comprehensive research model and visual dossier on Semi-conductors, earning top evaluation from internal examiners.</p>
+              <p><strong>Chemistry File Project</strong>Conceptualized and crafted a comprehensive research model and visual dossier on Food preservative and factor affecting it, earning top evaluation from internal examiners.</p>
+              <h3><strong>photo/video manipulation or editing</strong>2025-26</h3>
+              <P>Learned Photo/video editing and Software such as Canva. And practiced advanced digital composite work and media editing with a focus on visual consistency and asset creation.</P>
+            </div>
+          </div>
+
+          <!-- Skills Section -->
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Skills
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <p><strong>Softwares:</strong> Microsoft Office, Canva</p>
+              <p><strong>Technical:</strong> AI & ML, Data Science,Data management, Web Development (HTML/CSS/JS), Python</p>
+              <p><strong>Creative:</strong> Writing, Media Editing, Graphic Designing, Social Media Management</p>
+              <p>I am currently learning Cyber-security and Full stack development courses</p>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+          <section class="footer">
+        <p align="center">Designed and developed by Rishab Jain</p>
+        <p align="center"> Details as on - 10 Aug 2026</p>
+        <p align="right">© 2024 Rishab Jain. All rights reserved.</p>
+      </section>
+
+    </div> <!-- Closes .portfolio-container -->
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Smooth fade-in animation on load
+      const portfolio = document.getElementById("portfolio");
+      setTimeout(() => {
+        portfolio.style.opacity = "1";
+      }, 50);
+
+      // Accordion Click Logic
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+      accordionHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+          const accordionItem = header.parentElement;
+          const content = accordionItem.querySelector(".accordion-content");
+
+          // Toggle current active item
+          if (accordionItem.classList.contains("active")) {
+            accordionItem.classList.remove("active");
+            content.style.maxHeight = null;
+          } else {
+            // Close other open accordions (Optional: comment out if you want multiple open at once)
+            document.querySelectorAll(".accordion-item").forEach(item => {
+              item.classList.remove("active");
+              item.querySelector(".accordion-content").style.maxHeight = null;
+            });
+
+            accordionItem.classList.add("active");
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
