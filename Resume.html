@@ -143,6 +143,9 @@
       display: flex;
       flex-direction: column;
     }
+    .hidden {
+      display: none;
+    }
 
     .accordion-item {
       border-bottom: 1px solid rgba(255, 255, 255, 0.25);
@@ -280,6 +283,7 @@
           <a href="projects.html" class="nav-btn">Projects</a>
           <a href="research.html" class="nav-btn">Research papers</a>
           <a href="contact.html" class="nav-btn">Contact</a>
+          <a href="statistic.html" class="nav-btn">Statistic-1</a>
         </nav>
 
       </header>
@@ -303,10 +307,10 @@
             </button>
             <div class="accordion-content">
               <p><strong>Name:</strong> Rishab Jain</p>
-              <p><strong>Age:</strong>19</p>
-              <p><strong>Sex:</strong>Male</p>
+              <p><strong>Age:</strong> 19</p>
+              <p><strong>Sex:</strong> Male</p>
               <p><strong>Martial Status:</strong> Single </p>
-              <p><strong>Location:</strong> Muzaffarnagar,uttar Pradesh-251002</p>
+              <p><strong>Location:</strong> Muzaffarnagar, Uttar Pradesh-251002</p>
               <p><strong>Languages:</strong> English, Hindi</p>
               <p><strong>Hobbies & Interests:</strong> Writing, Music, Media Editing, Web Development</p>
               <p><strong>Nationality:</strong> Indian</p>
@@ -323,27 +327,43 @@
               <h3><strong>Indian Institute Of Technology, Madras</strong> — class of 2030</h3>
               <p><strong>Bachelor in Science (B.S.)</strong> in Data Science and Applications</p>
               <p><strong>Status:</strong> Currently Pursuing (at Foundational Level)</p>
-              <p><Strong>Subjects:</Strong> <a href="Subject.html" style="color:#ffffff">Click here to view Subject</a></p>
+              <p><Strong>Subjects:</Strong> <a href="BS_Subject.html" style="color:#ffffff"> Click here to view Subject</a></p>
 
-              <h3><strong>Sample-Example</strong>- class of 2031</h3>
+              <br>
+              <div class="hidden">
+              <h3><strong>Sample-Example</strong> - class of 2031</h3>
               <p><Strong>Bachelor in Technology (B.Tech.)</Strong> Sample-Course</p>
               <p><strong>Status:</strong> Joining Soon!</p>
-              <p><strong>Subject:</strong> <a href="........." style="color:#ffffff">Sample Subjects</a></p>
-
-              <h3><strong>Central Board of Secondary Education</strong>Delhi</h3>
-              <p><strong>Senior Secondary (XII)</strong> -2026 </p>
+              <p><strong>Subject:</strong> <a href="BT_Subject.html" style="color:#ffffff">Sample Subjects</a></p>
+             <br>
+          </div>
+              <h3><strong>Central Board of Secondary Education</strong> - Delhi</h3>
+              <br>
+              <p><strong>Senior Secondary (XII)</strong> - 2026 </p>
               <p><strong>CGPA:</strong> 8.74 (83%)</p>
               <p><strong>Major Subjects:</strong> Physics, Chemistry, Mathematics</p>
-
-              <p><Strong>Secondary (X)</Strong> -2024 </p>
+              <br>
+              <p><Strong>Secondary (X)</Strong> - 2024 </p>
               <p><strong>CGPA:</strong> 9.58 (91%)</p>
+              <br>
+              </div>
+              </div>
 
-              <h3><Strong>Joint Entrance Examination</Strong>-2027</h3>
+          <!--Achievement section-->
+          <div class="hidden">
+          <div class="accordion-item" style="display: hidden;">
+            <button class="accordion-header">
+              Achievements
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-content">
+              <h3><Strong>Joint Entrance Examination</Strong> -2027</h3>
               <p><strong>Mains-Score:</strong> __%ile</p>
-              <p><strong>Mains-Rank</strong>___</p>
+              <p><strong>Mains-Rank</strong> ___</p>
               <p><strong>Advanced-Score:</strong> ___</p>
               <p><strong>Advanced-Rank:</strong> ___</p>
             </div>
+          </div>
           </div>
 
           <!-- Work Experience Section -->
@@ -353,10 +373,10 @@
               <i class="fa-solid fa-chevron-down"></i>
             </button>
             <div class="accordion-content">
-              <h3><strong>Peer Tutor</strong> – Science & Mathematics |(2025–2026)</h3>
+              <h3><strong>Peer Tutor</strong> – Science & Mathematics | (2025–2026)</h3>
               <p>Mentored junior students in core Physics and Mathematics concepts, breaking down complex problem-solving methods</p>
-
-              <h3><strong>Freelancing</strong> - data management and Web development| (2024-25)</h3>
+              <br>
+              <h3><strong>Freelancing</strong> - data management and Web development | (2024-25)</h3>
               <p>Delivered Custom documents templates, web templates meeting specific styling requirement </p>
             </div>
           </div>
@@ -368,10 +388,11 @@
               <i class="fa-solid fa-chevron-down"></i>
             </button>
             <div class="accordion-content">
-              <h3><strong>Lead Student Research</strong>Senior Secondary (2025)</h3>
-              <p><Strong>Physics File Project</Strong>Conceptualized and crafted a comprehensive research model and visual dossier on Semi-conductors, earning top evaluation from internal examiners.</p>
-              <p><strong>Chemistry File Project</strong>Conceptualized and crafted a comprehensive research model and visual dossier on Food preservative and factor affecting it, earning top evaluation from internal examiners.</p>
-              <h3><strong>photo/video manipulation or editing</strong>2025-26</h3>
+              <h3><strong>Lead Student Research</strong> Senior Secondary (2025)</h3>
+              <p><Strong>Physics File Project</Strong> - Conceptualized and crafted a comprehensive research model and visual dossier on Semi-conductors, earning top evaluation from external examiners.</p>
+              <p><strong>Chemistry File Project</strong> - Conceptualized and crafted a comprehensive research model and visual dossier on Food preservative and factor affecting it, earning top evaluation from external examiners.</p>
+              <br>
+              <h3><strong>photo/video manipulation or editing</strong> 2025-26</h3>
               <P>Learned Photo/video editing and Software such as Canva. And practiced advanced digital composite work and media editing with a focus on visual consistency and asset creation.</P>
             </div>
           </div>
@@ -396,8 +417,8 @@
 
           <section class="footer">
         <p align="center">Designed and developed by Rishab Jain</p>
-        <p align="center"> Details as on - 10 Aug 2026</p>
-        <p align="right">© 2024 Rishab Jain. All rights reserved.</p>
+        <p align="center"> Details as on - 15 Aug 2026</p>
+        <p align="right">© 2026 Rishab Jain. All rights reserved.</p>
       </section>
 
     </div> <!-- Closes .portfolio-container -->
